@@ -37,7 +37,7 @@
 #! /usr/bin/env python
 # 为了告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中文输出可能会有乱码
 # -*- coding: utf-8 -*-
-print 'code begin...';
+print 'code begin...'
 ```
 
 ***
@@ -45,12 +45,12 @@ print 'code begin...';
 ### 4. 列表(list)和元组(tuple)
 #### 1. list
 ```python
-list=['a','b'];
-list.append('');# 尾部添加元素
-list.insert('',6);# 指定位置添加元素
-list.pop(); # 删除行尾元素
-list.pop(2);# 删除指定位置元素
-list.sort(); # 排序
+list=['a','b']
+list.append('') # 尾部添加元素
+list.insert('',6) # 指定位置添加元素
+list.pop() # 删除行尾元素
+list.pop(2) # 删除指定位置元素
+list.sort() # 排序
 ```
 #### 2. tuple
 * 元组一旦定义就不能修改其中的元素
@@ -86,16 +86,16 @@ for inum in range(start,end):
 
 ### 6. Dict&Set
 #### 1. Dict(字典):保存键值对，类似java的map数据类型，并且key的值可以重复
-- 赋值：dict[key]=value;
+- 赋值：dict[key]=value
     * 注意:如果Key不存在，那么该键值对会添加到字典中
-- 取值：value=dict[key]  或者 value=dict.get(key,def);
+- 取值：value=dict[key]  或者 value=dict.get(key,def)
     * 注意：如果key不存在，那么dict会报错
-- 删除: dict.remove(key);
+- 删除: dict.remove(key)
     * 注意：dict内部存放的顺序和key放入的顺序是没有关系的
 #### 2. Set(集合)：用来存储单个元素，可以看成是数学意义上的无序和无意义的元素的集合，可以进行交并补操作
-- 添加： set.add(value); #可以重复添加，但是没有意义
-- 删除： set.remove(value); #删除不存在的元素就会报错
-*  s1 = set([1, 2, 3]); # 集合的定义方式，容易忘记写set关键字
+- 添加： set.add(value) #可以重复添加，但是没有意义
+- 删除： set.remove(value) #删除不存在的元素就会报错
+*  s1 = set([1, 2, 3]) # 集合的定义方式，容易忘记写set关键字
 
 ***
 
@@ -117,16 +117,16 @@ for inum in range(start,end):
 ```python
 def def_func(a,num=None):
     if num is None:
-        num=100;
+        num=100
     # 'do something!'
 ```
 - 如果默认参数不指向不变的对象，那么程序就会产生逻辑错误
 #### 3. 可变参数
 - *args表示可变参数，可变参数在函数的内部组装成了tuple
-- 可变参数可以通过*()或者*[]的方式进行传参，比如：fun(*(1,2,3)),fun(*[1,2,3]);
+- 可变参数可以通过*()或者*[]的方式进行传参，比如：fun(*(1,2,3)),fun(*[1,2,3])
 #### 4. 关键字参数
 - **kw表示关键字参数，关键字参数在函数的内部组装成了dict
-- 关键字参数可以通过\*\*dict的方式进行传参，比如: fun(\*\*{'name':'naruto','age':19});
+- 关键字参数可以通过\*\*dict的方式进行传参，比如: fun(\*\*{'name':'naruto','age':19})
 #### 5. 注意事项
 * 可变参数和关键字参数应该放在参数列表的尾部
 * 参数顺序： 必选参数-->默认参数-->可变参数-->关键字参数
@@ -144,65 +144,62 @@ def def_func(a,num=None):
 * **注意：不是所有的数据类型都可以进行切片**
 * **注意：其实切片也支持倒数切片**
 #### 2. 迭代：获取可迭代对象的值
-##### 1. 迭代字符串
-##### 2. 迭代列表
+##### a. 迭代字符串
+##### b. 迭代列表
 * list实现下标输出,list本身是没有下标的
 ```python
-list=[1,2,3,4,5];
+list=[1,2,3,4,5]
 for num,val in enumerate(list):
-    print num,val;
+    print num,val
 ```
-##### 3. 迭代元组
-##### 4. 甚至迭代字典 dict.iteritems()获取词典的key和val
+##### c. 迭代元组
+##### d. 迭代字典 dict.iteritems()获取词典的key和val
 ```python
-dict={'key':'val','key':'val'};
+dict={'key':'val','key':'val'}
 for key,val in dict.iteritems():
-    print key,val;
+    print key,val
 ```
-##### 5. for循环里同时引用两个变量
+##### e. for循环里同时引用两个变量
 ```python
 for key,val in [('a':'1'),('b':'2'),('c':'3')]:
-    print key,val;
+    print key,val
 ```
 * 注意：不是所有对象都可以进行迭代，被迭代的对象必须是可迭代的对象
 * 判断对象是否是可迭代对象：isinstance(obj, Iterable)
             
 #### 3. 列表生成式： 按照一定的规律生成列表
-##### 1. 定义方法
-1. list=range(1,100);
-2. list=[x for x in range(1,100)];  # 同第一个 这个x是可以调用其本身的所有方法的
-3. list=[x*x for x in range(1,100)];  #计算1-100所有数的平方
-4. list=[x*x for x in range(1,100) if x%2==0]; #筛选出偶数的平方 
-5. list=[m+n for m in 'ABC' for n in '123'];#嵌套定义生成全排列
-##### 2. 列表取值
+##### a. 定义方法
+1. list=range(1,100)
+2. list=[x for x in range(1,100)]  # 同第一个 这个x是可以调用其本身的所有方法的
+3. list=[x*x for x in range(1,100)]  #计算1-100所有数的平方
+4. list=[x*x for x in range(1,100) if x%2==0] #筛选出偶数的平方 
+5. list=[m+n for m in 'ABC' for n in '123'] #嵌套定义生成全排列
+##### b. 列表取值
 1. 调用next()方法 ,这种方法可以用但是很不推荐，如果列表中的元素有n多个，那么next()就要调用n多次
 2. 使用for循环进行迭代, 这才是比较常规的做法
-##### 3. 判断某一个对象是否是某一种类型
+##### c. 判断某一个对象是否是某一种类型
 ```python   
-isinstance(obj,type);
+isinstance(obj,type)
 ```
 #### 4. 生成器： 是对列表生成器的一种优化，只在每一次调用next()的时候动态的在内存中进行计算，所以比较节省空间
-##### 1. 定法方法
-1. gen=(x for x in range(1,20)); #逻辑比较简单的生成器,只是将列表生成器的[]改成了()括号           
+##### a. 定义方法
+1. gen=(x for x in range(1,20)) #逻辑比较简单的生成器,只是将列表生成器的[]改成了()括号           
 2. 逻辑非常复杂的生成器需要借助函数进行改造
 ```python
 #定义生成器
 def fib(max):
-    n,a,b=0,0,1;  
+    n,a,b=0,0,1  
     while n < max:
-        yield n,b;   
-        a,b=b,a+b;
-        n=n+1;
+        yield n,b   
+        a,b=b,a+b
+        n=n+1
     # 使用生成器
     for val in fib(6):
-        print val;
+        print val
 ```                
 > 注意：生成器的特点--> 每一次调用生成器的next()方法的时候，
 > 程序会执行到yiele就返回,下次调用next()的时候就会从yield处继续执行下去
 > 直到遇到return或者函数体执行完毕就是生成器的结束指令(generator) 
-##### 2. 取值： 生成器取值和列表生成式是一致的，不建议使用next(),推荐使用for循环迭代
+##### b. 取值： 生成器取值和列表生成式是一致的，不建议使用next(),推荐使用for循环迭代
 * 注意： 生成器迭代到最后一个元素的时候如果继续迭代就会抛出StopIteration的错误
                 
-                
-        
-        
