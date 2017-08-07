@@ -78,8 +78,8 @@ else:
 for inum in range(start,end):
     # do somethings
 # 2.while循环
-    while 条件:
-        # do somethings
+while 条件:
+    # do somethings
 ```
 
 ***
