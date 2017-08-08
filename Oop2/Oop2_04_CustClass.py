@@ -148,7 +148,7 @@ class Chain(object):
 
 
 c1 = Chain()
-print c1.aaa.user
+print c1.aaa.user.what.lalala
 
 # 5. __call__
 print '__call__'

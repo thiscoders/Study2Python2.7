@@ -9,9 +9,10 @@ import os, time
 
 
 def run_proc(name):
+    print 'func is running...'
     for i in range(5):
         print '%s,run child process %s (%s)' % (i, name, os.getpid())
-        time.sleep(3)
+        time.sleep(500)
 
 
 if __name__ == '__main__':
